@@ -1,11 +1,6 @@
 package org.homework;
 
-import org.homework.entity.Iphone;
-import org.homework.service.IphoneService;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-import java.util.Scanner;
+import org.homework.service.PhoneService;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,6 +8,6 @@ public class Main {
 //        IphoneService iphoneService = new IphoneService();
 //        Iphone[] iphones = iphoneService.generateIphoneArr();
 //        System.out.println(Arrays.toString(iphones));
-        new IphoneService().mainService();
+        new PhoneService().mainService();
     }
 }
