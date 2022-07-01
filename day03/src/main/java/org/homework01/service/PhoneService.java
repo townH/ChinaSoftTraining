@@ -1,7 +1,7 @@
-package org.homework.service;
+package org.homework01.service;
 
 
-import org.homework.entity.Phone;
+import org.homework01.entity.Phone;
 
 import java.util.Arrays;
 import java.util.Scanner;

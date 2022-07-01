@@ -1,6 +1,6 @@
-package org.homework;
+package org.homework01;
 
-import org.homework.service.PhoneService;
+import org.homework01.service.PhoneService;
 
 public class Main {
     public static void main(String[] args) {
