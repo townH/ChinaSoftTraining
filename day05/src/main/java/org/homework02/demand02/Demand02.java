@@ -12,7 +12,6 @@ public class Demand02 {
     public void callName(int num) throws IOException {
         if (num <= 0) return;
 
-
         Demand01 demand01 = new Demand01();
         String file = "day05/src/main/resources/homework02/名单.txt";
         String[] allNamesFromFile = demand01.getAllNamesFromFile(file);

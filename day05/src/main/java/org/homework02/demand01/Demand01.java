@@ -1,7 +1,6 @@
 package org.homework02.demand01;
 
 import org.homework02.utils.Utils;
-
 import java.io.*;
 
 public class Demand01 {
@@ -39,41 +38,45 @@ public class Demand01 {
         if (nameArrays == null || nameArrays.length == 0) return null;
 
         String[] familyNames = new String[nameArrays.length];
-        for (int i = 0; i < nameArrays.length; i++) {
-            familyNames[i] = String.valueOf(nameArrays[i].charAt(0));
-        }
-        return familyNames;
-    }
+        StringBuilder builder = new StringBuilder();
+        int count = 0;
 
+        for (int i = 0; i < nameArrays.length; i++) {
+            if ( !Utils.isRepeated(familyNames, String.valueOf(nameArrays[i].charAt(0)))){
+                familyNames[i] = String.valueOf(nameArrays[i].charAt(0));
+                count++;
+            }
+        }
+
+        String[] noRepeatedFamilyName = new String[count];
+        for (int i = 0,j=0; i < familyNames.length && j < count; i++) {
+            if (familyNames[i] != null){
+                noRepeatedFamilyName[j] = familyNames[i];
+                j++;
+            }
+        }
+
+        return noRepeatedFamilyName;
+    }
 
     public String[] getClassifyByFamilyName(String[] nameArrays){
         if (nameArrays == null || nameArrays.length == 0) return null;
 
         String[] familyName = this.getFamilyName(nameArrays);
 
-        //不重复姓
-        String[] tempt = new String[familyName.length];
-        int count = 0;
-        for (int i = 0; i < familyName.length; i++) {
-            if ( !Utils.isRepeated(tempt, familyName[i])){
-                tempt[count] = familyName[i];
-                count++;
-            }
-        }
-
         StringBuilder builder = new StringBuilder();
-        String[] noRepeatedArray = new String[count];
+        String[] noRepeatedArray = new String[familyName.length];
 
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < familyName.length; i++) {
             builder.delete(0, builder.length());
-            builder.append(tempt[i]).append(",").append("[");
+            builder.append(familyName[i]).append(",").append("[");
 
             for (int j = 0; j < nameArrays.length; j++) {
                 if ( nameArrays[j] == null || "".equals(nameArrays[j])) {
                     continue;
                 }
 
-                if (tempt[i].equals(String.valueOf(nameArrays[j].charAt(0)))){
+                if (familyName[i].equals(String.valueOf(nameArrays[j].charAt(0)))){
                     builder.append(nameArrays[j]).append(",");
                 }
 
@@ -84,18 +87,4 @@ public class Demand01 {
         }
         return noRepeatedArray;
     }
-
-
-
-
-//    //String数组 中是否 重复
-//    public boolean isRepeated(String[] arr,String str){
-//        if (arr == null || arr.length == 0) return false;
-//        if (str == null || str.length() == 0) return false;
-//
-//        for (String s : arr) {
-//            if (str.equals(s)) return true;
-//        }
-//        return false;
-//    }
 }
