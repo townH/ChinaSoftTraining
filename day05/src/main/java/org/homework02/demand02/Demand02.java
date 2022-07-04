@@ -28,7 +28,6 @@ public class Demand02 {
             }
         }
 
-
         for (int i = 0; i < count; i++) {
             int index = randomNum[i];
             System.out.println(allNamesFromFile[index]);

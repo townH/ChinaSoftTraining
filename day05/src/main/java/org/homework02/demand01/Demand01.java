@@ -26,7 +26,6 @@ public class Demand01 {
         bufferedReader.close();
 
         return string.split("\t");
-//        return string == null ? null : string.split("\n");
     }
 
     /**
@@ -79,7 +78,6 @@ public class Demand01 {
                 if (familyName[i].equals(String.valueOf(nameArrays[j].charAt(0)))){
                     builder.append(nameArrays[j]).append(",");
                 }
-
             }
             builder.delete(builder.length() - 1, builder.length());
             builder.append("]");
