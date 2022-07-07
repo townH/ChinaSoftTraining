@@ -7,7 +7,6 @@ public class Main {
         new RegisterService().register("dfjffjd","fkdslf");
 //        new RegisterService().register("dfjffjdk","fkdslf");
 
-
         new MainService().homePage();
     }
 }
