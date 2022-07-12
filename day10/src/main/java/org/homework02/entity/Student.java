@@ -28,6 +28,8 @@ public class Student {
 
     @Override
     public int hashCode() {
+        System.out.println("hashCode.sout");
+
         return Objects.hash(name,  age);
     }
 
