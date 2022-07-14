@@ -31,6 +31,11 @@ public class Main {
             sortPokers(arrayList);
             System.out.println("player  :\t" + arrayList);
         }
+
+        HashMap<Object, Object> map = new HashMap<>();
+        for (Map.Entry<Object, Object> objectObjectEntry : map.entrySet()) {
+
+        }
     }
 
     public static ArrayList initPoker(){
@@ -93,7 +98,6 @@ public class Main {
      */
     public static void sortPokers(List<String> list) {
         ArrayList arrayList = initPoker();
-
 
         Collections.sort(list, new Comparator<String>() {
             @Override
