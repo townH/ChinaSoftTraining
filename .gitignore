@@ -1,0 +1,4 @@
+# 项目排除路径
+/day11/target/
+/day12/target/
+/day14/target/
